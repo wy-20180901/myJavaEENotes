@@ -22,5 +22,13 @@
     - timer = setTimeout("需要运行的函数","间隔的毫秒数");
     - clearTimeout(timer);
   - document
+    - document从属于window
+    - document.writeln();
+    - document.title
+    - document.location
+    - document.元素名.子元素名
   - history
+    - history();
+    - history.forward();
+    - window.history.go(n);
   - location
