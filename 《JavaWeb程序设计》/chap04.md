@@ -41,4 +41,51 @@
 
 - JSP声明只能作定义，不能实现控制逻辑
 
-- 
+- URL传值
+
+  - 传输的只能是字符串
+  - 内容可以在地址栏被看到
+
+  ```java
+  // 获取参数
+  String str = request.getParameter("m");
+  // 将字符串转化为数字
+  int number = Integer.parseInt(str);
+  ```
+
+- JSP指令
+
+  - page
+  - include 
+  - taglib
+
+  ```java
+  // 导入包
+  <%@ page import="packageName.className" %>
+  // 设置字符集
+  <%@ page pageEncoding="编码类型" %>
+  // 设置错误界面
+  <%@ page isErrorPage="true" %>
+  <%@ page errorPage = "error.jsp" %>
+  // 设定MIME类型和字符编码
+  <%@ page contentType="MIME类型;charset=字符编码" %>
+  // 插入外部文件
+  <%@ include file="demo.jsp" %>
+  ```
+
+- JSP动作
+
+  - 使用XML语法格式的标记来控制服务器的行为
+  - include动作还会自动检测被包含文件的变化
+
+  ```java
+  jsp:include 当前页面被请求的时候引入一个文件
+  jsp:forword 将请求转到另外一个页面
+  jsp:useBean 获得JavaBean实例
+  jsp:setProperty 设置JavaBean属性
+  jsp:getProperty 获得JavaBean属性
+  jsp:plugin 根据浏览器的类型为Java插件生成OBJECT和EMBED两种标记。
+  ```
+
+  
+
