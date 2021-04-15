@@ -228,7 +228,10 @@ protected <T> T doGetBean(final String name, @Nullable final Class<T> requiredTy
 
 ```
 
+- 工厂模式：https://github.com/KingdeGuo/myDesignPatternsNotes/blob/main/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.md
+- SpringBean工厂类详解
 
+```java
 
-- 工厂模式
+```
 
