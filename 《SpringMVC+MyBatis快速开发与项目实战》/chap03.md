@@ -13,6 +13,9 @@
     - `Controller`:在表现层（控制层）被使用。
   - 注入Bean注解
     - `Authowored`:
+      - 属于Spring的，默认要求依赖的对象必须存在
+      - 如果要允许使用`null`值，则可以把`required=false`，即`@Autowired(required=false)`
+      - 如果想要使用名称进行装配，可以使用`Qualifier`注解进行使用。
     - `Resource`:
       - 默认按照名称进行装配，名称可以通过`name`属性进行指定。
       - 如果没有指定`name`属性，当注解写在字段上时，默认取字段名进行查找。
