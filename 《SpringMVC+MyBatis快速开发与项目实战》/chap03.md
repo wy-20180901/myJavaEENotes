@@ -21,6 +21,6 @@
       - 如果没有指定`name`属性，当注解写在字段上时，默认取字段名进行查找。
       - 如果注解写在`setter`方法上默认取属性名进行装配，当找不到名称匹配的`bean`时才按照类型进行装配。
       - 如果`name`属性一旦指定，就只会按照名称进行装配。
-- 单例模式
+- 单例模式：https://github.com/KingdeGuo/myDesignPatternsNotes/blob/main/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F.md
 - 工厂模式
 
