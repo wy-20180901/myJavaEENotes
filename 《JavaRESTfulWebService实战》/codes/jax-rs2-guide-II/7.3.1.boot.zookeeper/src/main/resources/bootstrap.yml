@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: bootZookeeper
+  cloud:
+    zookeeper:
+      connectString: 10.211.55.32:2181,10.211.55.32:2182,10.211.55.32:2183
