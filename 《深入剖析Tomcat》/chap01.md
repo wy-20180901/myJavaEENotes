@@ -24,7 +24,9 @@ public class SockerDemo {
             OutputStream os = socket.getOutputStream();
             boolean autoFlush = true;
             PrintWriter out = new PrintWriter(socket.getOutputStream(), autoFlush);
-            BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            BufferedReader in = new BufferedReader(
+                	new InputStreamReader(socket.getInputStream()
+				));
             // 发送一个报文
             out.println("GET /Demo4_war_exploded//index.jsp HTTP/1.1");
             out.println("Host: localhost:8080");
