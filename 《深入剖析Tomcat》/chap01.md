@@ -66,3 +66,30 @@ public class SockerDemo {
 
 ## ServerSocket
 
+- 连接到远程服务器的应用程序时创建的套接字。
+- 创建了`ServerSocket`之后，可以使其等待传入的连接请求。
+- 这些工作可以通过调用`ServerSocket`的`accept`方法完成。
+
+```java
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.ServerSocket;
+
+public class ServerSocketDemo {
+    public static void main(String[] args) {
+        try {
+            ServerSocket serverSocket = new ServerSocket(
+                    8080, 1, InetAddress.getByName("localhost")
+            );
+            
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+
+
+## 应用程序
+
