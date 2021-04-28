@@ -20,4 +20,5 @@
 
 - `Flink`分别提供了面向流处理的接口`(DataStream API)`和面向批处理的接口`(DataSet API)`。因此，`Flink`既可以完成流处理，也可以完成批处理。
 
-  
+  ![image-20210428184403668](https://raw.githubusercontent.com/KingdeGuo/myPictureBed/main/img_upload202104/28/184403-303770.png)
+
