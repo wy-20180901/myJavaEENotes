@@ -32,17 +32,40 @@
 
     - 如果要允许远程客户端访问，需要在配置文件中打开TCP监听
 
-      - 编辑配置文件
+      - 编辑配置文件`/etc/systemd/system/multi-user.target.wants/docker.service`，在环境变量`ExecStart`后面加`-H tcp://0.0.0.0`，允许任意IP的客户端连接
+
+        ![image-20210428192505622](https://raw.githubusercontent.com/KingdeGuo/myPictureBed/main/img_upload202104/28/192506-54.png)
+
       - 重启Docker daemon
+
+        `systemctl daemon-reload`
+
+        `systemctl restart docker.service`
+
       - 根据服务器端ip进行远程访问
+
+        ![image-20210428192819801](https://raw.githubusercontent.com/KingdeGuo/myPictureBed/main/img_upload202104/28/192822-6735.png)
 
   - Docker 镜像: Image
 
+    - Docker镜像可以看成只读模板，通过它可以创建docker容器。
+    - 镜像生成方法
+      - 从无到有开始创建镜像
+      - 下载并使用别人创建好的镜像
+      - 在现有的镜像上创建新的镜像
+
   - Register
+
+    - 分为公有和私有两种，默认是`Docker Hub`
 
   - Docker 容器: Container
 
-  ![image-20210428191450268](https://raw.githubusercontent.com/KingdeGuo/myPictureBed/main/img_upload202104/28/191451-314706.png)
+    - 对于应用软件，镜像是软件生命周期的构建和打包阶段，而容器则是启动和运行阶段。
+
+  ![image-20210428191450268](https://raw.githubusercontent.com/KingdeGuo/myPictureBed/main/img_upload202104/28/192827-38951.png)
 
 - 除了docker命令行工具外，用户也可以使用REST API与服务器通信。
-- 
+- 一些命令
+  - `docker images`查看下载到本地的镜像
+  - `docker ps`查看正在运行的容器
+  - `docker run`启动容器
