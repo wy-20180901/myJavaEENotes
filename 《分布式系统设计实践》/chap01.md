@@ -13,7 +13,7 @@
 
 ## 一个典型的分布式系统的组成
 
-
+![image-20210503220127628](https://raw.githubusercontent.com/KingdeGuo/myPictureBed/main/img_upload202105/03/220129-441611.png)
 
 ## 分布式结点间的关系
 
