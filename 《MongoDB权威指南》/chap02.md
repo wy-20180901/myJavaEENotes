@@ -82,6 +82,12 @@
 
     ![image-20210503231113770](https://raw.githubusercontent.com/KingdeGuo/myPictureBed/main/img_upload202105/03/231115-667396.png)
 
-  - 更新
+  - 更新，使用`update`
 
-  - 删除
+    `update`接受（至少）两个参数，一个是限定条件（用于匹配待更新的文档），第二个是新的文档。
+
+    ![image-20210503231856981](https://raw.githubusercontent.com/KingdeGuo/myPictureBed/main/img_upload202105/03/231923-751421.png)
+
+  - 删除，使用`remove`
+
+    ![image-20210503232002752](https://raw.githubusercontent.com/KingdeGuo/myPictureBed/main/img_upload202105/03/232041-178470.png)
