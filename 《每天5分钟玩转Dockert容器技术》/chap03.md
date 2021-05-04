@@ -29,4 +29,11 @@
 - 关于rootfs相关
 
   ![每天5分钟玩转Docker容器技术（三） - 知乎](https://pic2.zhimg.com/80/v2-e7bf9fbb488309f38864cac909a022a5_1440w.jpg)
-  - 
+  - 内核空间是kernal，Linux刚启动的时候会加载bootfs文件系统，之后bootfs会被卸载掉。
+  - 对于base镜像来说，底层直接用Host的kernal就可以了，自己只需要提供rootfs就可以了。
+  - 所有容器都共用host的kernal，在容器中无法对kernal进行升级，因此如果容器对kernal版本有要求，则不建议使用容器，这种场景虚拟机更合使。
+
+
+
+## Docker采用分层的结构
+
