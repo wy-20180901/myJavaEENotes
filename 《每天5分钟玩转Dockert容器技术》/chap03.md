@@ -37,3 +37,15 @@
 
 ## Docker采用分层的结构
 
+- 最好的好处就是共享资源，采用`copy-on-write`特性
+
+- 可写的容器层
+
+  ![docker image management foundation](https://www.fatalerrors.org/images/blog/692bc9846ec5c0514b4e73c26bd7f319.jpg)
+
+  - 当容器启动时，一个新的可写层被加载到镜像的顶部
+    - 这一层被称为容器层，容器层之下是镜像层。
+    - 所有对容器的改动，无论是添加、删除、还是修改文件都是只发生在容器层中。
+
+## 构建镜像
+
