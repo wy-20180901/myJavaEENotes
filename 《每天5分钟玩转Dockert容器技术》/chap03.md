@@ -93,3 +93,47 @@
 
 ## Dockerfile常用指令
 
+- from：指定base镜像
+
+- maintainer：设置镜像的作者，可以是任意字符串
+
+- copy：将文件从build context复制到镜像
+
+- add：与copy类似，从build context复制文件到镜像，不同的是，如果src是归档文件，文件会被自动加压到dest
+
+- env：设置环境变量
+
+  `ENV MY_VERSION 1.3 RUN apt-get install -y mypackage=$MY_VERSION`
+
+- expose：指定容器中的进程会监听某个端口，Docker可以将该端口暴露出来。
+
+- volume：将文件或目录声明为volume
+
+- workdir：为后面的run,cmd,entrypoint,add,copy指令设置镜像中的当前工作目录
+
+- run：在容器中运行指定的命令
+
+- cmd：容器启动时运行指定的指令
+
+  Dockerfile中可以有多个cmd指令，但是只有最后一个生效。
+
+- entrypoint
+
+  Dockerfile中可以有多个entrypoint指令，但只有最后一个生效。
+
+- Dockerfile支持以#开头的注释。
+
+
+
+## Run、CMD、ENTRYPOINT三者对比
+
+- run：执行命令并创建新的镜像层，RUN经常用于安装软件包。
+- cmd：设置容器启动后默认执行的命令及其参数，但CMD能够被docker run后面跟的命令行参数替换
+- entrypoint：配置容器启动时运行的命令。
+
+
+
+
+
+## 分发镜像
+
