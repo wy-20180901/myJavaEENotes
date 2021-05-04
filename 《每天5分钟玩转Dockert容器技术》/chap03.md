@@ -49,3 +49,47 @@
 
 ## 构建镜像
 
+- 两种构建镜像的方法
+
+  - docker commit
+
+    - 运行容器
+
+    - 修改容器
+
+    - 将容器保存为新的镜像
+
+      `docker commit old_name new_name`
+
+  - Dockerfile
+
+    - 首先创建`Dockerfile`
+
+      ![image-20210504204203831](https://raw.githubusercontent.com/KingdeGuo/myPictureBed/main/img_upload202105/04/204204-397109.png)
+
+    - 然后执行`docker build`命令
+
+      ```
+      docker build -t the_name .
+      ```
+
+      ![image-20210504204036191](https://raw.githubusercontent.com/KingdeGuo/myPictureBed/main/img_upload202105/04/204047-539848.png)
+
+    - 可以使用`docker history`显示镜像的构建历史
+
+      ![image-20210504204339621](https://raw.githubusercontent.com/KingdeGuo/myPictureBed/main/img_upload202105/04/204341-542300.png)
+
+    - docker会缓存已有镜像的镜像层，构建新镜像时，如果某镜像层已经存在，就直接使用无需创建。
+
+      如果不希望使用缓存，就使用`--no-cache`参数
+
+- 调试镜像
+
+  可以运行中间的状态码。
+
+  例如：`docker run -it 22d31cc52b3e`
+
+
+
+## Dockerfile常用指令
+
