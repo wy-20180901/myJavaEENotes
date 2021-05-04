@@ -65,7 +65,13 @@
   ![image-20210428191450268](https://raw.githubusercontent.com/KingdeGuo/myPictureBed/main/img_upload202104/28/192827-38951.png)
 
 - 除了docker命令行工具外，用户也可以使用REST API与服务器通信。
+
 - 一些命令
   - `docker images`查看下载到本地的镜像
   - `docker ps`查看正在运行的容器
   - `docker run`启动容器
+  
+- 使用Docker技术我们可以快速构建一个应用服务器、消息中间件、数据库等
+
+  - 例如：想要学习django时，我们可以先执行`docker search django`，然后`docker run/pull _the_image_`
+  - 想要使用Hadoop时，同理可以执行`docker search hadoop`
