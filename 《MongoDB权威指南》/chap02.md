@@ -145,3 +145,33 @@
 
 ## 连接MongoDB Shell
 
+- 方式1
+
+  - `mongo some-host:30000/myDD`
+
+- 方式2
+
+  - 在启动mongo shell时不启动任何mongod，通过`--nodb`参数来实现。
+
+  - 启动之后
+
+    ```js
+    conn = new Mongo("some-host:30000");
+    db = conn.getDB("myDB");
+    ```
+
+  - 展示
+
+    ![image-20210505202956606](https://raw.githubusercontent.com/KingdeGuo/myPictureBed/main/img_upload202105/05/202957-622345.png)
+
+## 使用Shell脚本
+
+- 使用`help`可以查看相应帮助
+
+  ![image-20210505203055185](https://raw.githubusercontent.com/KingdeGuo/myPictureBed/main/img_upload202105/05/203055-6675.png)
+
+- 使用`--quilt`可以不显示`MongoDB shell version`
+- 使用`mongo script1.js script2.js `可以执行脚本，然后执行完毕后退出。
+- 也可以使用`load()函数`
+  - `load("script1.js")`
+- 
