@@ -171,7 +171,43 @@
   ![image-20210505203055185](https://raw.githubusercontent.com/KingdeGuo/myPictureBed/main/img_upload202105/05/203055-6675.png)
 
 - 使用`--quilt`可以不显示`MongoDB shell version`
+
 - 使用`mongo script1.js script2.js `可以执行脚本，然后执行完毕后退出。
+
 - 也可以使用`load()函数`
+
   - `load("script1.js")`
-- 
+
+- 其他命令
+
+  - `show dbs`
+
+  - `show collections`
+
+    - 可以在shell中使用`run()`来执行命令程序
+
+      `run("pwd")`
+
+      `run("ls","-l","home/zd/dir/")`
+
+
+
+## 修改.mongorc.js文件
+
+- 如果某些脚本会被频繁加载，可以将它们添加到`.mongorc.js`文件中，这个文件会在启动`shell`时自动运行。
+
+  利用这个特性可以创建全局变量等。
+
+- 可以使用`--norc`参数来防止加载该文件。
+
+- 可以通过设置`EDITOR`变量的值来调用编辑器
+
+  ```js
+  EDITOR="/usr/bin/vim"
+  var name="kingdeguo"
+  edit name
+  ```
+
+- `version`
+
+  ![image-20210505205248013](https://raw.githubusercontent.com/KingdeGuo/myPictureBed/main/img_upload202105/05/205248-468732.png)
