@@ -65,9 +65,11 @@
   - Windows下：`ipconfig/flushdns`
   - Linux下：`/etc/init.d/nscd restart`
 
-<!-- 注意：在Java应用中JVM也会缓存DNS解析的结果。这个缓存是在InetAddress类中完成的。有两种缓存策略：一种是正确的解析结果缓存，第一种是正确的解析结果，另一种是失败的解析结果。这两个缓存时间可以在%JAVA_HOME%\lib\security\java.security文件中的networkaddress.cache.ttl和networdaddress.cache.negative.ttl，默认分别是-1（永不失效）和10（缓存10秒） -->
+>  注意：在Java应用中JVM也会缓存DNS解析的结果。这个缓存是在InetAddress类中完成的。有两种缓存策略：一种是正确的解析结果缓存，第一种是正确的解析结果，另一种是失败的解析结果。这两个缓存时间可以在%JAVA_HOME%\lib\security\java.security文件中的networkaddress.cache.ttl和networdaddress.cache.negative.ttl，默认分别是-1（永不失效）和10（缓存10秒） 
+>
 
-<!-- 如果我们需要InetAddress来解析域名，必须是单例模式，不然会有严重的性能问题。如果每次都创建InetAddress实例，则每次都要进行一次完整的域名解析，非常耗时 -->
+> 如果我们需要InetAddress来解析域名，必须是单例模式，不然会有严重的性能问题。如果每次都创建InetAddress实例，则每次都要进行一次完整的域名解析，非常耗时 
+>
 
 - 几种域名解析的方式
   - A记录，代表Address，用来指定对应域名的IP地址。A记录可以将多个域名解析到一个IP地址，但是不能将一个域名解析到多个IP地址。
@@ -78,7 +80,8 @@
 
 - CDN是构筑在现有Internet上的一种先进的流量分布网络。其目的是在现有的Internet中增加一层新的网络架构。
 
-  <!-- 有一个比喻： CDN = Mirror + Cache + GSLB -->
+  > 有一个比喻： CDN = Mirror + Cache + GSLB 
+  >
 
   - CDN的几个目标
     - 可扩展
