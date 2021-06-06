@@ -49,4 +49,114 @@
 > 不管是何种指令集都只有几种基本的元素，如加、减、乘、除、取余等，这些运算又可以进一步分解为二进制位运算：与、或、异或等。这些指令又通过指令来完成，而指令的核心目的就是确定运算的种类和运算需要的数据，以及从哪里区操作数，将结果存放在哪里。相应的指令集会有对应的架构出现，如基于栈的或者基于寄存器的。
 >
 
-- 
+- Java为何选择基于栈的架构
+  - 与平台无关
+  - 指令紧凑
+- 每当调用一个新方法时，会在这个栈上面创建一个新的栈帧数据结构，这个栈帧会保留这个方法的一些元信息，如在这个方法中定义的局部变量、一些用来支持常量池的解析、正常方法返回及异常处理机制等。
+
+![img](https://raw.githubusercontent.com/KingdeGuo/myPictureBed/main/img_upload202106/06/101342-26042.jpeg)
+
+- 执行引擎的执行过程
+
+  ```java
+  package aaatoday.demo;
+  
+  public class Demo {
+      public static void main(String[] args) {
+          int a = 3;
+          int b = 2;
+          int c = (a + b) * 10;
+      }
+  }
+  ```
+
+  使用`javap -verbose`命令之后
+
+  ```java
+  Classfile /D:/Myhub/Myhub_java/MyTest/out/production/MyTest/aaatoday/demo/Demo.class
+    Last modified 2021-6-6; size 452 bytes
+    MD5 checksum bdf94bec10d8ee4b30226e8c058327c8
+    Compiled from "Demo.java"
+  public class aaatoday.demo.Demo
+    minor version: 0
+    major version: 55
+    flags: ACC_PUBLIC, ACC_SUPER
+  Constant pool:
+     #1 = Methodref          #3.#21         // java/lang/Object."<init>":()V
+     #2 = Class              #22            // aaatoday/demo/Demo
+     #3 = Class              #23            // java/lang/Object
+     #4 = Utf8               <init>
+     #5 = Utf8               ()V
+     #6 = Utf8               Code
+     #7 = Utf8               LineNumberTable
+     #8 = Utf8               LocalVariableTable
+     #9 = Utf8               this
+    #10 = Utf8               Laaatoday/demo/Demo;
+    #11 = Utf8               main
+    #12 = Utf8               ([Ljava/lang/String;)V
+    #13 = Utf8               args
+    #14 = Utf8               [Ljava/lang/String;
+    #15 = Utf8               a
+    #16 = Utf8               I
+    #17 = Utf8               b
+    #18 = Utf8               c
+    #19 = Utf8               SourceFile
+    #20 = Utf8               Demo.java
+    #21 = NameAndType        #4:#5          // "<init>":()V
+    #22 = Utf8               aaatoday/demo/Demo
+    #23 = Utf8               java/lang/Object
+  {
+    public aaatoday.demo.Demo();
+      descriptor: ()V
+      flags: ACC_PUBLIC
+      Code:
+        stack=1, locals=1, args_size=1
+           0: aload_0
+           1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+           4: return
+        LineNumberTable:
+          line 3: 0
+        LocalVariableTable:
+          Start  Length  Slot  Name   Signature
+              0       5     0  this   Laaatoday/demo/Demo;
+  
+    public static void main(java.lang.String[]);
+      descriptor: ([Ljava/lang/String;)V
+      flags: ACC_PUBLIC, ACC_STATIC
+      Code:
+        stack=2, locals=4, args_size=1
+           0: iconst_3
+           1: istore_1
+           2: iconst_2
+           3: istore_2
+           4: iload_1
+           5: iload_2
+           6: iadd
+           7: bipush        10
+           9: imul
+          10: istore_3
+          11: return
+        LineNumberTable:
+          line 5: 0
+          line 6: 2
+          line 7: 4
+          line 8: 11
+        LocalVariableTable:
+          Start  Length  Slot  Name   Signature
+              0      12     0  args   [Ljava/lang/String;
+              2      10     1     a   I
+              4       8     2     b   I
+             11       1     3     c   I
+  }
+  SourceFile: "Demo.java"
+  
+  Process finished with exit code 0
+  ```
+
+  执行内存图
+
+  ![image-20210606102407421](https://raw.githubusercontent.com/KingdeGuo/myPictureBed/main/img_upload202106/06/102409-35461.png)
+
+- 在执行方法调用时，会先将参数存储在对应方法的局部变量区中，然后将参数压入栈中。
+- 当执行`invokestatic`指令时又创建了一个新的栈帧。
+- 执行`return`时，栈帧会撤销。
